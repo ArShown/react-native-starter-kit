@@ -5,10 +5,7 @@ import rootReducer from '@/storage/reducer/_index';
 
 const store = createStore(
   combineReducers(rootReducer),
-  applyMiddleware(
-    multipleActionsMiddleware,
-    promiseMiddleware,
-  )
+  applyMiddleware(multipleActionsMiddleware, promiseMiddleware)
 );
 
 export default store;

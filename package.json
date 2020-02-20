@@ -5,7 +5,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "expo": "~36.0.0",
@@ -20,7 +21,16 @@
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@expo/webpack-config": "^0.11.1",
-    "babel-preset-expo": "~8.0.0"
+    "babel-preset-expo": "~8.0.0",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1"
   },
-  "private": true
+  "private": true,
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
 }
