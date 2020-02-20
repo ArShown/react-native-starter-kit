@@ -22,8 +22,8 @@
     "@babel/core": "^7.0.0",
     "@expo/webpack-config": "^0.11.1",
     "babel-preset-expo": "~8.0.0",
-    "husky": "^4.2.3",
-    "lint-staged": "^10.0.7",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.2",
     "prettier": "^1.19.1"
   },
   "private": true,

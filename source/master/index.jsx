@@ -5,7 +5,6 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import A from '@/screens/a';
 import B from '@/screens/b';
 
-
 const Master = ({ children }) => {
   const [screen, setScreen] = useState(false);
   const state = useSelector(state => state['foobar']);
@@ -33,7 +32,10 @@ const Master = ({ children }) => {
       <Button onPress={fooHandler} title="foo" />
       <Button onPress={barHandler} title="bar" />
       <ScreenView />
-      <Button onPress={toggleScreenHandler} title={`go to screen ${['A','B'][+!screen]}`} />
+      <Button
+        onPress={toggleScreenHandler}
+        title={`go to screen ${['A', 'B'][+!screen]}`}
+      />
     </View>
   );
 };
@@ -46,6 +48,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   }
 });
-
 
 export default Master;
