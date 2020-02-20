@@ -15,3 +15,4 @@ web-report/
 
 # ide
 .idea
+webpack.ide.config.js
