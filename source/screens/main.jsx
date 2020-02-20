@@ -2,10 +2,10 @@ import React, { useState, useMemo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { StyleSheet, Text, View, Button } from 'react-native';
 /* screens */
-import A from '../screens/a';
-import B from '../screens/b';
+import A from './a';
+import B from './b';
 
-const Master = ({ children }) => {
+const Main = () => {
   const [screen, setScreen] = useState(false);
   const state = useSelector(state => state['foobar']);
   const dispatch = useDispatch();
@@ -27,7 +27,6 @@ const Master = ({ children }) => {
 
   return (
     <View style={styles.container}>
-      <Text>{children}</Text>
       <Text>foobar state is: {state}</Text>
       <Button color="#f194ff" onPress={fooHandler} title="foo" />
       <Button onPress={barHandler} title="bar" />
@@ -49,4 +48,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Master;
+export default Main;
