@@ -1,51 +1,49 @@
-import React, { useState, useMemo } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { StyleSheet, Text, View, Button } from 'react-native';
-/* screens */
-import A from './a';
-import B from './b';
+import React, { useState } from 'react';
+import { AppLoading } from 'expo';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import Link1 from './link-1';
+import Link2 from './link-2';
+import Link3 from './link-3';
+
+const Tab = createBottomTabNavigator();
 
 const Main = () => {
-  const [screen, setScreen] = useState(false);
-  const state = useSelector(state => state['foobar']);
-  const dispatch = useDispatch();
-
-  const fooHandler = () => {
-    dispatch({ type: 'foo' });
+  const [isLoadingComplete, setLoadingComplete] = useState(false);
+  const finishHandler = () => {
+    setLoadingComplete(true);
   };
 
-  const barHandler = () => {
-    dispatch({ type: 'bar' });
-  };
-
-  const toggleScreenHandler = () => {
-    setScreen(!screen);
-  };
-
-  /* 亂寫的，到時候再看看需不需要 */
-  const ScreenView = useMemo(() => [A, B][+screen], [screen]);
+  if (!isLoadingComplete) {
+    return (
+      <AppLoading
+        startAsync={loadResourcesAsync}
+        onError={handleLoadingError}
+        onFinish={finishHandler}
+      />
+    );
+  }
 
   return (
-    <View style={styles.container}>
-      <Text>foobar state is: {state}</Text>
-      <Button color="#f194ff" onPress={fooHandler} title="foo" />
-      <Button onPress={barHandler} title="bar" />
-      <ScreenView />
-      <Button
-        onPress={toggleScreenHandler}
-        title={`go to screen ${['A', 'B'][+!screen]}`}
-      />
-    </View>
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Link1" component={Link1} />
+        <Tab.Screen name="Link2" component={Link2} />
+        <Tab.Screen name="Link3" component={Link3} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-});
+/* 準備資源 */
+const loadResourcesAsync = async function() {
+  await Promise.all([]);
+};
+
+function handleLoadingError(error) {
+  // In this case, you might want to report the error to your error reporting
+  // service, for example Sentry
+  console.warn(error);
+}
 
 export default Main;
