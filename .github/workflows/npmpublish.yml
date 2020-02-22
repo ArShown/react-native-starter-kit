@@ -22,6 +22,6 @@ jobs:
       - run: npm run build:web
       - uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          ACCESS_TOKEN: 27d52508cea9bebfa9fbc2c603c7355760072264
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: web-build # The folder the action should deploy.
