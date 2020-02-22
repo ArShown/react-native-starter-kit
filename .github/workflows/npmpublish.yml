@@ -1,0 +1,31 @@
+name: Node.js Package
+
+on:
+  # push 到 master 分支時會觸發
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Build
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '13.x'
+      - run: npm install
+      - run: npm build:web
+
+      - name: Deploy
+      - uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: 27d52508cea9bebfa9fbc2c603c7355760072264
+          BRANCH: demo # The branch the action should deploy to.
+          FOLDER: web-build # The folder the action should deploy.
