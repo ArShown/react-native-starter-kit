@@ -1,10 +1,10 @@
 {
-  "app.js": "/react-native-starter-kit/static/js/app.bc448b43.chunk.js",
-  "app.e8ceeb11adcd87c12893.map": "/react-native-starter-kit/e8ceeb11adcd87c12893.map",
+  "app.js": "/react-native-starter-kit/static/js/app.4ff0392a.chunk.js",
+  "app.0d6e6c8a61b03686676c.map": "/react-native-starter-kit/0d6e6c8a61b03686676c.map",
   "runtime~app.js": "/react-native-starter-kit/static/js/runtime~app.e72eb715.js",
   "runtime~app.b3144bdd298f13470a42.map": "/react-native-starter-kit/b3144bdd298f13470a42.map",
-  "static/js/2.355441de.chunk.js": "/react-native-starter-kit/static/js/2.355441de.chunk.js",
-  "f51ae5213150b64fc2fc.map": "/react-native-starter-kit/f51ae5213150b64fc2fc.map",
+  "static/js/2.6e6e5f6f.chunk.js": "/react-native-starter-kit/static/js/2.6e6e5f6f.chunk.js",
+  "137669393bbce412dddb.map": "/react-native-starter-kit/137669393bbce412dddb.map",
   "fonts/AntDesign.ttf": "/react-native-starter-kit/./fonts/AntDesign.ttf",
   "fonts/Entypo.ttf": "/react-native-starter-kit/./fonts/Entypo.ttf",
   "fonts/Feather.ttf": "/react-native-starter-kit/./fonts/Feather.ttf",
@@ -36,10 +36,10 @@
   "favicon.ico": "/react-native-starter-kit/favicon.ico",
   "index.html": "/react-native-starter-kit/index.html",
   "manifest.json": "/react-native-starter-kit/manifest.json",
-  "precache-manifest.674488f09fde0f9e4da6f9782cc8ee52.js": "/react-native-starter-kit/precache-manifest.674488f09fde0f9e4da6f9782cc8ee52.js",
+  "precache-manifest.a7a2691108a5755c173bd9ff58b0fc45.js": "/react-native-starter-kit/precache-manifest.a7a2691108a5755c173bd9ff58b0fc45.js",
   "serve.json": "/react-native-starter-kit/serve.json",
   "service-worker.js": "/react-native-starter-kit/service-worker.js",
-  "static/js/2.355441de.chunk.js.gz": "/react-native-starter-kit/static/js/2.355441de.chunk.js.gz",
-  "static/js/app.bc448b43.chunk.js.gz": "/react-native-starter-kit/static/js/app.bc448b43.chunk.js.gz",
+  "static/js/2.6e6e5f6f.chunk.js.gz": "/react-native-starter-kit/static/js/2.6e6e5f6f.chunk.js.gz",
+  "static/js/app.4ff0392a.chunk.js.gz": "/react-native-starter-kit/static/js/app.4ff0392a.chunk.js.gz",
   "static/js/runtime~app.e72eb715.js.gz": "/react-native-starter-kit/static/js/runtime~app.e72eb715.js.gz"
 }
