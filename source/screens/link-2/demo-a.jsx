@@ -14,10 +14,6 @@ function DemoA({ navigation }) {
         onPress={() => navigation.navigate('DemoB')}
       />
       <Button title="Go back" onPress={() => navigation.goBack()} />
-      <Button
-        title="Go back to first screen in this stack"
-        onPress={() => navigation.popToTop()}
-      />
     </View>
   );
 }

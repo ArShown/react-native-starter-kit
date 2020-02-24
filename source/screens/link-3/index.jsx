@@ -1,13 +1,15 @@
-import React from 'react';
-import { Text, View } from 'react-native';
-import { useSafeArea } from 'react-native-safe-area-context';
+import React, { useState } from 'react';
+import { Text, TouchableHighlight, View, SafeAreaView } from 'react-native';
+import Modal from './modal';
 
 function Link3() {
-  const insets = useSafeArea();
+  const [modalVisible, setModalVisible] = useState(false);
+  const closeHandler = () => {
+    setModalVisible(false);
+  };
   return (
-    <View
+    <SafeAreaView
       style={{
-        paddingTop: insets.top,
         flex: 1,
         justifyContent: 'space-between',
         alignItems: 'center'
@@ -15,8 +17,17 @@ function Link3() {
     >
       <Text>This is top text.</Text>
       <Text>demo with react-native-safe-area-context</Text>
+      <TouchableHighlight
+        onPress={() => {
+          setModalVisible(true);
+        }}
+      >
+        <Text>Show Modal</Text>
+      </TouchableHighlight>
       <Text>This is bottom text.</Text>
-    </View>
+      {/* modal */}
+      <Modal visible={modalVisible} closeHandler={closeHandler} />
+    </SafeAreaView>
   );
 }
 
