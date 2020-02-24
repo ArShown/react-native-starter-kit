@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import { Platform } from 'react-native';
 import { AppLoading } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 import Link1 from './link-1';
 import Link2 from './link-2';
 import Link3 from './link-3';
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const TabIcon = ({ color, size }) => (
   <Ionicons
@@ -37,23 +39,35 @@ const Main = () => {
 
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen
-          name="Link1"
-          component={Link1}
-          options={{ tabBarIcon: TabIcon }}
-        />
-        <Tab.Screen
-          name="Link2"
-          component={Link2}
-          options={{ tabBarIcon: TabIcon }}
-        />
-        <Tab.Screen
-          name="Link3"
-          component={Link3}
-          options={{ tabBarIcon: TabIcon }}
-        />
-      </Tab.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          headerTitleAlign: 'center',
+          headerStyle: { backgroundColor: '#fbfbfb' },
+          headerTitleStyle: { color: '#333333' }
+        }}
+      >
+        <Stack.Screen name="Header">
+          {props => (
+            <Tab.Navigator>
+              <Tab.Screen
+                name="Link1"
+                component={Link1}
+                options={{ tabBarIcon: TabIcon }}
+              />
+              <Tab.Screen
+                name="Link2"
+                component={Link2}
+                options={{ tabBarIcon: TabIcon }}
+              />
+              <Tab.Screen
+                name="Link3"
+                component={Link3}
+                options={{ tabBarIcon: TabIcon }}
+              />
+            </Tab.Navigator>
+          )}
+        </Stack.Screen>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
